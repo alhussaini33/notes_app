@@ -10,13 +10,19 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        forceMaterialTransparency: true,
+        surfaceTintColor: Colors.transparent,
         title: const Text(
           'Notes',
           style: TextStyles.tilte,
         ),
         actions: const [SearchIcon()],
       ),
-      body: const NoteItem(),
+      body: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return const NoteItem();
+          }),
     );
   }
 }
