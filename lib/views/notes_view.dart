@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/constants/text_styles.dart';
+import 'package:note_app/widgets/note_item.dart';
 import 'package:note_app/widgets/search_icon.dart';
 
 class NotesView extends StatelessWidget {
@@ -15,6 +16,7 @@ class NotesView extends StatelessWidget {
         ),
         actions: const [SearchIcon()],
       ),
+      body: const NoteItem(),
     );
   }
 }

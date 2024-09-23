@@ -14,8 +14,8 @@ class TextStyles {
   );
 
   static const noteSubTitle = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
-    color: Color.fromARGB(255, 22, 19, 19),
-  );
+      fontSize: 18,
+      fontWeight: FontWeight.w400,
+      color: Color.fromARGB(255, 22, 19, 19),
+      height: 1.5);
 }
