@@ -6,14 +6,11 @@ class DateOfNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Align(
-      alignment: Alignment.bottomRight,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-        child: Text(
-          'May21,2022',
-          style: TextStyles.noteSubTitle,
-        ),
+    return Padding(
+      padding: const EdgeInsets.only(right: 16),
+      child: Text(
+        'May21,2022',
+        style: TextStyles.noteSubTitle,
       ),
     );
   }

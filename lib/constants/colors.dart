@@ -7,5 +7,5 @@ class AppColors {
   static const Color babyBlue = Color.fromARGB(255, 150, 196, 234);
   //! Blacks
   static const Color black = Color(0xFF000000);
-  static const Color secondaryBlack = Color.fromARGB(255, 22, 19, 19);
+  static Color secondaryBlack = Colors.black.withOpacity(.4);
 }

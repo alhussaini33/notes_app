@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class DeleteIcon extends StatelessWidget {
-  const DeleteIcon({super.key});
+  const DeleteIcon({super.key, required this.size});
+  final double size;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(20.0),
-      child: Icon(
+    return IconButton(
+      onPressed: () {},
+      icon: Icon(
         Icons.delete_rounded,
-        size: 40,
+        size: size,
         color: Colors.black,
       ),
     );

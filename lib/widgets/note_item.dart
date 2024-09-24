@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widgets/date_of_note.dart';
-import 'package:note_app/widgets/delete_icon.dart';
-import 'package:note_app/widgets/item_descreption.dart';
+import 'package:note_app/widgets/list_tile_item.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key});
@@ -9,24 +8,17 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
       child: Container(
-        height: 250,
-        width: 450,
+        padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
         decoration: BoxDecoration(
-          color: Colors.orange,
           borderRadius: BorderRadius.circular(15),
+          color: const Color(0xffFFCC80),
         ),
         child: const Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ItemDescreption(),
-                DeleteIcon(),
-              ],
-            ),
+            ListTileItem(),
             DateOfNote(),
           ],
         ),
