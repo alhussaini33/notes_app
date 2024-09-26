@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/constants/colors.dart';
 import 'package:note_app/constants/text_styles.dart';
+import 'package:note_app/widgets/add_note.dart';
 import 'package:note_app/widgets/list_of_items.dart';
 import 'package:note_app/widgets/search_icon.dart';
-import 'package:note_app/widgets/note_item.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -12,7 +12,13 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return const AddNote();
+                });
+          },
           backgroundColor: AppColors.babyBlue,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
