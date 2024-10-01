@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/widgets/custom_button.dart';
 import 'package:note_app/widgets/custom_text_field.dart';
 
 class AddNote extends StatelessWidget {
@@ -23,6 +24,7 @@ class AddNote extends StatelessWidget {
             hint: 'descreption',
             maxLines: 7,
           ),
+          CustomButton(),
         ],
       ),
     );
