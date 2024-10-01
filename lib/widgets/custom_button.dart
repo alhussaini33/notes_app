@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/constants/colors.dart';
-import 'package:note_app/constants/text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key});
@@ -9,7 +8,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.only(top: 32),
+      padding: const EdgeInsets.only(top: 26, bottom: 26),
       child: ElevatedButton(
         onPressed: () {},
         style: ButtonStyle(
