@@ -3,7 +3,7 @@ import 'package:note_app/constants/colors.dart';
 import 'package:note_app/constants/text_styles.dart';
 import 'package:note_app/widgets/add_note.dart';
 import 'package:note_app/widgets/list_of_items.dart';
-import 'package:note_app/widgets/search_icon.dart';
+import 'package:note_app/widgets/cutom_iocn.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -35,7 +35,11 @@ class NotesView extends StatelessWidget {
             'Notes',
             style: TextStyles.tilte,
           ),
-          actions: const [SearchIcon()],
+          actions: const [
+            CutomIocn(
+              icon: Icons.search,
+            )
+          ],
         ),
         body: const ListOfItems());
   }
