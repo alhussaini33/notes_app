@@ -6,20 +6,23 @@ class EditItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        CustomTextField(
-          hint: 'title',
-          maxLines: 2,
-        ),
-        SizedBox(
-          height: 8,
-        ),
-        CustomTextField(
-          hint: 'content',
-          maxLines: 5,
-        )
-      ],
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+      child: Column(
+        children: [
+          CustomTextField(
+            hint: 'title',
+            maxLines: 2,
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          CustomTextField(
+            hint: 'content',
+            maxLines: 5,
+          )
+        ],
+      ),
     );
   }
 }
