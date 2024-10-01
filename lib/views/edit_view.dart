@@ -10,6 +10,7 @@ class EditView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           forceMaterialTransparency: true,
           surfaceTintColor: Colors.transparent,
           title: const Text(
