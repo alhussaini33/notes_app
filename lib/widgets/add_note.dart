@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/widgets/custom_button.dart';
-import 'package:note_app/widgets/custom_text_field.dart';
+import 'package:note_app/widgets/add_note_form.dart';
 
 class AddNote extends StatelessWidget {
   const AddNote({super.key});
@@ -10,27 +9,7 @@ class AddNote extends StatelessWidget {
     return const SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 32,
-            ),
-            CustomTextField(
-              hint: "title ",
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            CustomTextField(
-              hint: 'descreption',
-              maxLines: 5,
-            ),
-            SizedBox(
-              height: 80,
-            ),
-            CustomButton(),
-          ],
-        ),
+        child: AddNoteForm(),
       ),
     );
   }
