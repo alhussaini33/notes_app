@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:note_app/constants/colors.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  const CustomButton({super.key, this.onPressed});
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class CustomButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 26, bottom: 26),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ButtonStyle(
           shape: WidgetStatePropertyAll(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
