@@ -13,27 +13,30 @@ class AddNote extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AddNoteCubit(),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        child: BlocConsumer<AddNoteCubit, AddNoteState>(
-          listener: (context, state) {
-            Functions functions = Functions();
-            if (state is AddNoteSuccess) {
-              Navigator.pop(context);
-              functions.showSnackBar(context, 'adding succses');
-            }
+      child: BlocConsumer<AddNoteCubit, AddNoteState>(
+        listener: (context, state) {
+          Functions functions = Functions();
+          if (state is AddNoteSuccess) {
+            Navigator.pop(context);
+            functions.showSnackBar(context, 'adding succses');
+          }
 
-            if (state is AddNoteFauiler) {
-              functions.showSnackBar(context, state.errMrssage);
-              print(state.errMrssage);
-            }
-          },
-          builder: (context, state) {
-            return ModalProgressHUD(
-                inAsyncCall: state is AddNoteLoading ? true : false,
-                child: SingleChildScrollView(child: AddNoteForm()));
-          },
-        ),
+          if (state is AddNoteFauiler) {
+            functions.showSnackBar(context, state.errMrssage);
+            print(state.errMrssage);
+          }
+        },
+        builder: (context, state) {
+          return ModalProgressHUD(
+              inAsyncCall: false, //state is AddNoteLoading ? true : false,
+              child: Padding(
+                padding: EdgeInsets.only(
+                    left: 16,
+                    right: 16,
+                    bottom: MediaQuery.of(context).viewInsets.bottom),
+                child: const SingleChildScrollView(child: AddNoteForm()),
+              ));
+        },
       ),
     );
   }
