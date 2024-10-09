@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/cubits/add_note_cubit/add_note_state.dart';
+import 'package:note_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:note_app/helper/functions/show_snack_bar.dart';
 import 'package:note_app/widgets/add_note_form.dart';
 
@@ -19,6 +20,7 @@ class AddNote extends StatelessWidget {
           if (state is AddNoteSuccess) {
             Navigator.pop(context);
             functions.showSnackBar(context, 'adding succses');
+            BlocProvider.of<NotesCubit>(context).fetchAllNotes();
           }
 
           if (state is AddNoteFauiler) {

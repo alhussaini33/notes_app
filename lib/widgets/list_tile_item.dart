@@ -3,19 +3,21 @@ import 'package:note_app/constants/text_styles.dart';
 import 'package:note_app/widgets/delete_icon.dart';
 
 class ListTileItem extends StatelessWidget {
-  const ListTileItem({super.key});
+  const ListTileItem({super.key, required this.title, required this.subTitle});
+  final String title;
+  final String subTitle;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-        title: const Text(
-          'Flutter tips',
+        title: Text(
+          title,
           style: TextStyles.noteTitle,
         ),
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 16, bottom: 16),
           child: Text(
-            'Build your career with Tharawat samy',
+            subTitle,
             style: TextStyles.noteSubTitle,
           ),
         ),
