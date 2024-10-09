@@ -36,7 +36,9 @@ class NoteItem extends StatelessWidget {
                 title: note.title,
                 subTitle: note.subTitle,
               ),
-              DateOfNote(),
+              DateOfNote(
+                date: note.date,
+              ),
             ],
           ),
         ),
