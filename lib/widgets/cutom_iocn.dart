@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:note_app/constants/colors.dart';
 
 class CutomIocn extends StatelessWidget {
-  const CutomIocn({super.key, required this.icon});
+  const CutomIocn({super.key, required this.icon, this.onpressed});
   final IconData icon;
+  final void Function()? onpressed;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class CutomIocn extends StatelessWidget {
       ),
       child: Center(
         child: IconButton(
-          onPressed: () {},
+          onPressed: onpressed,
           icon: Icon(icon),
           color: Colors.white, // لون الأيقونة
         ),

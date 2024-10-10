@@ -9,3 +9,11 @@ class NotesSuccess extends NotesState {
 
   NotesSuccess({required this.notes});
 }
+
+class NotesUpdated extends NotesState {}
+
+class NotesFaulier extends NotesState {
+  final String errMessage;
+
+  NotesFaulier({required this.errMessage});
+}

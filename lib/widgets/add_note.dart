@@ -30,7 +30,7 @@ class AddNote extends StatelessWidget {
         },
         builder: (context, state) {
           return ModalProgressHUD(
-              inAsyncCall: false, //state is AddNoteLoading ? true : false,
+              inAsyncCall: state is AddNoteLoading ? true : false,
               child: Padding(
                 padding: EdgeInsets.only(
                     left: 16,

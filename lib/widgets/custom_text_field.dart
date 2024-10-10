@@ -3,13 +3,19 @@ import 'package:note_app/constants/colors.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
-      {super.key, required this.hint, this.maxLines = 1, this.onSaved});
+      {super.key,
+      required this.hint,
+      this.maxLines = 1,
+      this.onSaved,
+      this.controller});
   final String hint;
   final int maxLines;
   final void Function(String?)? onSaved;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       onSaved: onSaved,
       validator: (value) {
         if (value?.isEmpty ?? true) {

@@ -18,4 +18,18 @@ class NoteModel extends HiveObject {
       required this.subTitle,
       required this.date,
       required this.color});
+
+  NoteModel copyWith({
+    String? title,
+    String? content,
+    String? date,
+    int? color,
+  }) {
+    return NoteModel(
+      title:
+          title ?? this.title, // إذا كان title غير مُقدم، استخدم القيمة الحالية
+      subTitle: content ?? this.subTitle, date: this.date,
+      color: color ?? this.color,
+    );
+  }
 }
